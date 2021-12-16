@@ -2,7 +2,7 @@
     flex: 3;
     margin: 20px;
     padding-bottom: 30px;
-    background-color: #e6cdcd;
+    background-color: #f5ebeb;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -32,12 +32,13 @@
 }
 
 .sideBarImg{
-    width: 150px;
+    width: 70%;
     margin-top: 15px;
 
 }
 
 .sideBarItem > p {
+    text-align: center;
     padding: 30px;
 }
 
