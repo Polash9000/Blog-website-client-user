@@ -1,21 +1,26 @@
+import { Link } from "react-router-dom";
 import "./Post.css";
 
-const Post = () => {
+const Post = ({ post }) => {
+    const PF = "http://localhost:5000/images/";
     return (
         <div className="post">
-            <img className="postImg" src="https://i.ibb.co/hCgWXtB/post1.jpg" alt="" />
+            {post.picture && (
+                <img className="postImg" src={PF + post.picture} alt="" />
+            )}
             <div className="postInfo">
                 <div className="postCtgs">
-                    <span className="postCtg">Sports</span>
-                    <span className="postCtg">Movie</span>
+                    {post.categories.map(c => (
+                        <span className="postCtg">{c.name}</span>
+                    ))}
                 </div>
-                <span className="postTitle">
-                    Lorem ipsum dolor sit
-                </span>
+                <Link to={`/post/${post._id}`} className="link"><span className="postTitle">
+                    {post.title}
+                </span></Link>
                 <hr />
-                <span className="postDate">1 hour ago</span>
+                <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
             </div>
-            <p className="postDetails">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima libero autem maxime dicta voluptas reiciendis? Ipsum ipsa voluptatum fuga animi quis, facilis nulla odit architecto consequuntur. Veritatis natus fugit illum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima libero autem maxime dicta voluptas reiciendis? Ipsum ipsa voluptatum fuga animi quis, facilis nulla odit architecto consequuntur. Veritatis natus fugit illum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima libero autem maxime dicta voluptas reiciendis? Ipsum ipsa voluptatum fuga animi quis, facilis nulla odit architecto consequuntur. Veritatis natus fugit illum.</p>
+            <p className="postDetails">{post.description}</p>
         </div>
     );
 };

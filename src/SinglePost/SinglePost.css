@@ -21,6 +21,16 @@
     font-size: 32px;
 }
 
+.singlePostUiTitleInput{
+    margin: 10px;
+    font-family: "Lora", serif;
+    font-size: 28px;
+    text-align: center;
+    border: none;
+    color: gray;
+    border-bottom: 1px solid lightgray;
+}
+
 .singlePostUiEdit{
     float: right;
     font-size: 20px;
@@ -58,4 +68,27 @@
 .singlePostUiDetails::first-letter{
     font-size: 25px;
     font-weight: 600;
+}
+
+.singlePostUiDescriptionInput{
+    border: none;
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.singlePostUiDescriptionInput:focus {
+    outline: none;
+}
+
+.singlePostUiUpdateButton{
+    width: 100px;
+    border: none;
+    background-color: teal;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 20px;
 }
